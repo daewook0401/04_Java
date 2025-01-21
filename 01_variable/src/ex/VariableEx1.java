@@ -191,6 +191,35 @@ public class VariableEx1 {
 		System.out.println(System.identityHashCode(str2));
 		System.out.println(System.identityHashCode(ch1));
 		
+		// -----------
+		
+		System.out.println("------------------------------------");
+		System.out.println("오버플로우(Overflow)");
+		
+		// 오버 플로우
+		// - 연산 결과가 자료형의 값의 범위를 초과(+)한 경우
+		
+		// 언더 플로우
+		// - 연산 결과가 자료형의 값의 범위를 초과(-)한 경
+		
+		int num = Integer.MAX_VALUE;
+		
+		System.out.println("num : " + num);
+		
+		num = num + 1; // Overflow 발생 
+		
+		System.out.println("num + 1 : " + num);
+		
+		num = num - 1; // Underflow 발생
+		
+		System.out.println("num - 1 : " + num);
+		
+		// 문제 원인
+		// - num의 자료형 int라서 최대/최소값을 초과하는 문제 발생
+		
+		// 해결 방법
+		// - num의 자료형을 long으로 변경
+		
 		
 		
 		
