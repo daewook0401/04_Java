@@ -1,4 +1,5 @@
 package condition.service;
+
 import java.util.Scanner;
 /**
  * 기능(예제, 연습문제) 제공용 서비스
@@ -91,5 +92,72 @@ public class ConditionService {
 		case 3: method3(); break;	
 		default : System.out.println("없는 메뉴 번호 입니다.");
 		}
+	}
+	
+	/** [성적 판별기]
+	 * <pre>
+	 * 중간고사, 기말고사, 과제 점수를 입력 받아 성적 부여
+	 * 
+	 * - 중간고사 (40%), 기말고사(50%), 과제(10%)
+	 * 
+	 * - 입력 시 각각 100점 만점으로 입력 받음
+	 * 
+	 * - 합산된 점수에 따라 성적 부여
+	 * 
+	 * 95점 이상 : A+
+	 * 90점 이상 : A
+	 * 85점 이상 : B+
+	 * 80점 이상 : B
+	 * 75점 이상 : C+
+	 * 70점 이상 : C
+	 * 65점 이상 : D+
+	 * 60점 이상 : D
+	 * 나머지    : F
+	 * 
+	 * 
+	 * [실행 화면]
+	 * 이름 : 홍길동
+	 * 중간고사 점수(40%) : 100
+	 * 기말고사 점수(50%) : 80
+	 * 과제 점수(10%) : 50
+	 * 
+	 * 홍길동의 최종 점수 : 85.0점
+	 * 성적 : B+
+	 *</pre>
+	 */
+	public void testScore() {
+		System.out.print("이름 : ");
+		String name = sc.next();
+		
+		System.out.print("중간고사 점수(40%) : ");
+		double middleTerm = sc.nextDouble();
+		
+		System.out.print("기말고사 점수(50%) : ");
+		double finalTerm = sc.nextDouble();
+		
+		System.out.print("과제 점수(10%) : ");
+		double assignScore = sc.nextDouble();
+		
+		System.out.println();
+		
+		double resultScore = (middleTerm * 0.4) + (finalTerm * 0.5) + (assignScore * 0.1);
+//		String result = resultScore <60.0 ? "F" : resultScore<65.0 ? "D" : resultScore<70.0 ? "D+" : resultScore<75.0 ? "C" : 
+//			resultScore<80.0 ? "C+" : resultScore<85.0 ? "B" : resultScore<90.0 ? "B+" : resultScore<95.0 ? "A" : "A+";
+		String result;
+
+		
+		switch((int)resultScore/5) {
+		case 20, 19:result = "A+"; break;
+		case 18 : result = "A"; break;
+		case 17 : result = "B+"; break;
+		case 16 : result = "B"; break;
+		case 15 : result = "C+"; break;
+		case 14 : result = "C"; break;
+		case 13 : result = "D+"; break;
+		case 12 : result = "D"; break;
+		default : result = "F";
+		}
+		System.out.printf("%s의 최종 점수 : %.1f \n", name, resultScore);
+		System.out.printf("성적 : %s", result);
 	}
 }

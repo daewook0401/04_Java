@@ -17,6 +17,7 @@ public class ConditionRun {
 //		service.method1();
 //		service.method2();
 //		service.method3();
-		service.displayMenu();
+//		service.displayMenu();
+		service.testScore();
 	}
 }
