@@ -146,18 +146,30 @@ public class ConditionService {
 		String result;
 
 		
-		switch((int)resultScore/5) {
-		case 20, 19:result = "A+"; break;
-		case 18 : result = "A"; break;
-		case 17 : result = "B+"; break;
-		case 16 : result = "B"; break;
-		case 15 : result = "C+"; break;
-		case 14 : result = "C"; break;
-		case 13 : result = "D+"; break;
-		case 12 : result = "D"; break;
-		default : result = "F";
+//		switch((int)resultScore/5) {
+//		case 20, 19:result = "A+"; break;
+//		case 18 : result = "A"; break;
+//		case 17 : result = "B+"; break;
+//		case 16 : result = "B"; break;
+//		case 15 : result = "C+"; break;
+//		case 14 : result = "C"; break;
+//		case 13 : result = "D+"; break;
+//		case 12 : result = "D"; break;
+//		default : result = "F";
+//		}
+		
+		switch((int)resultScore/10) {
+			case 10, 9 : result = "A"; break;
+			case 8 : result = "B"; break;
+			case 7 : result = "C"; break;
+			case 6 : result = "D"; break;
+			default : result = "F";
 		}
-		System.out.printf("%s의 최종 점수 : %.1f \n", name, resultScore);
+		
+		if (resultScore >= 60.0 && resultScore%10>=5 || resultScore==100) {
+			result+="+";
+		}
+		System.out.printf("%s의 최종 점수 : %.1f점 \n", name, resultScore);
 		System.out.printf("성적 : %s", result);
 	}
 }
