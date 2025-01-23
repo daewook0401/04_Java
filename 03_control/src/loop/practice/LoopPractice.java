@@ -237,8 +237,8 @@ public class LoopPractice {
 		}
 		for(int i=2;i<=num;i++) {
 			boolean checked=true;
-			for(int j=i;j>=2;j--) {
-				if (i%j==0 && i!=j) {
+			for(int j=i-1;j>2;j--) {
+				if (i%j==0) {
 					checked=false;
 					break;
 				}
