@@ -1,8 +1,8 @@
 package encapsulation;
 
+
 public class EncapsulationRun {
 	public static void main(String[] args) {
-	
 		Person person1 = new Person();
 		person1.setName("홍길동");
 		person1.setHeight(180.5);
