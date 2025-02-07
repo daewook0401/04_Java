@@ -6,6 +6,8 @@ public class PolymorphismRun {
 	public static void main(String[] args) {
 		PolymorphismService service = new PolymorphismService();
 		
-		service.test1();
+//		service.test1();
+//		service.test2();
+		service.test4();
 	}
 }
