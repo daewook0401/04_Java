@@ -6,7 +6,7 @@ public class ObjectRun {
 	public static void main(String[] args) {
 		ObjectService service = new ObjectService();
 //		service.outputMember();
-		service.inputMember();
+//		service.inputMember();
+		service.inputMemberList();
 	}
-
 }
